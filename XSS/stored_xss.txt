@@ -1,0 +1,10 @@
+Stored Cross-Site Scripting (XSS)
+
+Stored XSS is a vulnerability where malicious code is permanently stored on a server. This code executes whenever the specific page containing the stored script is loaded by a user.
+
+To solve this exercise, the recommended approach is to inject the XSS code into the comments section of the posts. This ensures the malicious script is stored on the server and will execute upon every subsequent page reload.
+
+Example Payload:
+<script>alert(1)</script>
+This payload should be submitted along with a username, email, and website information.
+

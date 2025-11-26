@@ -1,0 +1,11 @@
+DOM-based Cross-Site Scripting (XSS) occurs when malicious code is injected through a website's Document Object Model (DOM), typically when JavaScript processes unsanitized input.
+
+In this exercise, the search bar is the primary area of focus. Initially, testing with the basic payload <script>alert()</script> failed.
+
+Upon inspecting the source code using developer tools, it was revealed that the input was being placed within an <img> tag's src attribute. This is the crucial hint, indicating the need to close the existing tag to successfully inject code.
+
+Therefore, the revised payload becomes:
+"> <script>alert()</script>
+
+Alternatively, another method is to use an image tag that triggers code execution upon an error:
+<img src="1" onerror="alert()">

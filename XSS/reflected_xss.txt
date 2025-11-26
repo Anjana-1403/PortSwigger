@@ -1,0 +1,3 @@
+Just input this sample malicious code in the search bar 
+
+<script>alert(1)</script>
