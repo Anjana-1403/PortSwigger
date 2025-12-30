@@ -1,0 +1,22 @@
+<script>
+    
+    var url="https://0aa300ff033f77648085450b00a600e1.web-security-academy.net";
+
+    fetch(url + '/post',{
+        methods:'GET',
+        credentials:"include"
+    })
+
+    .then(response=>{
+        console.log(success);
+        return response.text();
+        
+    })
+
+    .then(data =>{
+        var c=document.cookie();
+        console.log(c);
+    })
+
+    .catch(error => console.log("error"));
+</script>

